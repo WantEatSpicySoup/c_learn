@@ -50,7 +50,7 @@ int main3()
 }
 
 // 求两个整形变量的和
-int main()
+int main4()
 {
 	int a = 0;
 	int b = 0;
@@ -60,4 +60,59 @@ int main()
 	printf("sum = %d\n", sum);
 
 	return 0;
+}
+
+// 使用scanf读取一个整数的值,并且使用printf输出这个值
+int main5()
+{
+	int a = 0;
+	scanf("%d", &a);
+	printf("%d\n", a);
+
+	return 0;
+}
+
+// 变量的作用域和生命周期演示
+int main6()
+{
+	int a = 10;
+	printf("%d\n", a); // 此处会报错,是因为a变量的作用域只限于变量a定义区域的大括号内
+
+	return 0;
+}    
+
+int main7()
+{
+	const int n = 10;
+	// char str[n]; error:虽然n被const修饰了,拥有了常量的属性,但n还是一个变量
+
+	return 0;
+}
+
+// 使用#define定义标识符常量,注意末尾没有分号;
+#define SIZE 10
+#define CH 'B'
+int main8()
+{
+	printf("%d\n", SIZE);
+	printf("%c\n", CH);
+
+	int arr[SIZE] = {0}; // 数组的所有元素都会被初始化为0
+
+	return 0;
+}
+
+// 定义枚举常量
+enum COLOR{
+	RED = 2,
+	YEELOW,
+	BLUE
+};
+int main()
+{
+	enum COLOR color = RED; // 定义枚举变量
+	printf("%d", RED);
+	printf("%d", YEELOW);
+	printf("%d", BLUE);
+	printf("%d", color);
 }
