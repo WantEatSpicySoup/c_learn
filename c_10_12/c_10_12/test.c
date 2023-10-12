@@ -108,11 +108,88 @@ enum COLOR{
 	YEELOW,
 	BLUE
 };
-int main()
+int main9()
 {
 	enum COLOR color = RED; // 定义枚举变量
 	printf("%d", RED);
 	printf("%d", YEELOW);
 	printf("%d", BLUE);
 	printf("%d", color);
+
+	return 0;
+}
+
+// 简单使用字符串
+int main10()
+{
+	// 如何存储abcdef这6个字符?
+	// 1.使用字符数组
+	char arr[6] = { 'a', 'b', 'c', 'd', 'e', 'f' };
+	// 2.使用字符串初始化
+	char str[] = "abcdef";
+
+	printf("%s\n", arr);
+	printf("%s\n", str);
+
+	return 0;
+} 
+
+
+#include <string.h>
+// 使用string.h中的字符串函数
+int main11()
+{
+	char str[] = "abcdef";
+	char arr[6] = { 'a', 'b', 'c', 'd', 'e', 'f'};
+	size_t len1 = strlen(str);
+	size_t len2 = strlen(arr);
+	printf("%zd\n", len1);
+	printf("%zd\n", len2);
+
+	return 0;
+}
+
+// 如何使用转义字符
+int main12()
+{
+	printf("d:\\test\\test.c\n"); // 将'\'进行转义,则可以打印
+	printf("%c\n", '\'\''); // 打印单引号
+	printf("%s\n", "\"\""); // 打印双引号
+
+	return 0;
+}
+
+// 简单使用if/else语句
+int main13()
+{
+	int flag = 0;
+	printf("你想好好学习吗?(1/0)");
+	scanf("%d", &flag);
+	if (flag == 1)
+	{
+		printf("好好学习,争取早日获取满意offer!\n");
+	}
+	else if (flag == 0) {
+		printf("希望你还是好好学习,找到好工作!\n");
+	}
+	else
+	{
+		printf("输入错误,选项只有1/0\n");
+	}
+
+	return 0;
+}
+
+// 简单使用while循环语句
+int main()
+{
+	// 在控制台输出1~5000
+	int i = 0;
+	while (i <= 5000)
+	{
+		printf("%d ", i);
+		i++;
+	}
+
+	return 0;
 }
