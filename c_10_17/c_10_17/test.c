@@ -119,9 +119,9 @@ int main7()
 int main8()
 {
 	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
-	int key = 5;
+	int key = 101;
 	int left = 0;
-	int right = 9;
+	int right = sizeof(arr) / sizeof(arr[0]) - 1;
 	int flag = 0;
 	while (left <= right)
 	{
@@ -178,7 +178,7 @@ int main9()
 // 模拟用户登录,密码错误三次之后退出程序
 #define USER_PASSWORD "123456"
 
-int main()
+int main10()
 {
 	char input[20] = {0};
 	int i = 0;
@@ -201,6 +201,34 @@ int main()
 	{
 		printf("登录失败,程序退出!!!");
 	}
+
+	return 0;
+}
+
+// 输出100~200之间的素数--试除法优化版本
+#include <math.h>
+
+int main()
+{
+	int i = 0;
+	int count = 0;
+	for (i = 101; i < 200; i += 2)
+	{
+		int j = 0;
+		for (j = 2; j < sqrt(i); j++)
+		{
+			if (i % j == 0)
+			{
+				break;
+			}
+		}
+		if (j > sqrt(i))
+		{
+			count++;
+			printf("%d ", i);
+		}
+	}
+	printf("\ncount = %d\n", count);
 
 	return 0;
 }
