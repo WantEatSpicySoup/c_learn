@@ -1,10 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
-// ��������Ϸ
+// 猜数字游戏
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-// ����˵�
+// 输出菜单
 void menu()
 {
 	printf("*****************************\n");
@@ -12,17 +12,17 @@ void menu()
 	printf("*****************************\n");
 }
 
-// ����Ϸ
+// 玩游戏
 void game()
 {
-	// ���������
+	// 生成随机数
 	int random_number = rand() % 100 + 1;
 	int user_input = 0;
 	while (1)
 	{
-		printf("������:>\n");
+		printf("请输入:>\n");
 		scanf("%d", &user_input);
-		// ������ж�
+		// 进行判断
 		if (random_number < user_input)
 		{
 			printf("�´���!!!\n");
@@ -44,30 +44,30 @@ int main1()
 	int input = 0;
 	do
 	{
-		// 1.����˵�
+		// 输出菜单
 		menu();
 		printf("��ѡ��:>\n");
 		scanf("%d", &input);
-		// ����ʱ���������������
+		// 设置随机数生成起点
 		srand((unsigned int)time(NULL));
-		// 2.�û�ѡ��
+		// 进行选择
 		switch (input)
 		{
 		case 1:
 			game();
 			break;
 		case 0:
-			printf("�˳���Ϸ....\n");
+			printf("退出游戏....\n");
 			break;
 		default :
-			printf("ѡ�����,����������!!!\n");
+			printf("输入错误,请重新输入!!!\n");
 		}
 	} while (input);
 
 	return 0;
 }
 
-// ʹ��ϵͳ�������ü����1���Ӻ�ػ�,����������ȡ���ػ�
+// 启动程序,则计算机60秒之后自动关机,控制台输入"我是猪"则取消定时关机
 #include <string.h>
 
 int main2()
@@ -76,20 +76,20 @@ int main2()
 	system("shutdown -s -t 60");
 	while (1)
 	{
-		printf("��˵������,������Խ���һ���Ӻ�ػ�\n");
+		printf("说我是猪取消关机\n");
 		scanf("%s", str);
-		if (strcmp(str, "������") == 0)
+		if (strcmp(str, "我是猪") == 0)
 		{
 			system("shutdown -a");
 			break;
 		}
 	}
-	printf("������,������,������\n");
+	printf("你是猪你是猪你是猪,你真的是猪\n");
 
 	return 0;
 }
 
-// �����������Լ��,շת�����
+// 求两个数最大公约数 -- 辗转相除法
 int main3()
 {
 	int m = 0;
@@ -106,7 +106,7 @@ int main3()
 	return 0;
 }
 
-// ���1��100�����������г��ֶ��ٸ�����9
+// 输出1~100数字之间包含多少个9
 int main4()
 {
 	int i = 0;
@@ -131,7 +131,7 @@ int main4()
 	return 0;
 }
 
-// �ڿ���̨���99�˷���
+// 输出99乘法表
 int main5()
 {
 	int i = 0;
