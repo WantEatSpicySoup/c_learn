@@ -240,21 +240,28 @@ int main10()
 
 // 递归实现n的k次方
 
-int n_power(int n, int k)
+double n_power(int n, int k)
 {
-	if (k == 1)
+	if (k == 0)
 	{
-		return n;
+		return 1;
 	}
-	return n * n_power(n, k - 1);
+	else if (k > 0)
+	{
+		return n * n_power(n, k - 1);
+	}
+	else
+	{
+		return 1.0 / n_power(n, -k);
+	}
 }
 int main11()
 {
 	int n = 0;
 	int k = 0;
 	scanf("%d %d", &n, &k);
-	int ret = n_power(n, k);
-	printf("%d\n", ret);
+	double ret = n_power(n, k);
+	printf("%lf\n", ret);
 
 	return 0;
 }
@@ -293,7 +300,7 @@ int fabonacci_recur(int n)
 }
 
 
-int main()
+int main12()
 {
 	int n = 0;
 	scanf("%d", &n);
