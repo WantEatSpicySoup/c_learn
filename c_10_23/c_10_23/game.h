@@ -4,7 +4,7 @@
 #define COL 9
 #define ROWS (ROW+2)
 #define COLS (COL+2)
-#define MINE_NUMBER 10
+#define MINE_NUMBER 80
 #define EASY_COUNT ((ROW*COL)-(MINE_NUMBER))
 
 #include <stdio.h>
