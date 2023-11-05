@@ -68,7 +68,6 @@ int main()
 	{
 		p_arr = p_tmp;
 		p_tmp = NULL;
-
 	}
 	for (i = 0; i < 20; i++)
 	{
